@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Properties | Walker Real Estate Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-bar">
+      <h1>Walker Real Estate Finder</h1>
+      <nav aria-label="Primary navigation">
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse Properties</a></li>
+          <li><a href="liked.html">Liked Properties</a></li>
+          <li><a href="contact.html">Contact Agent</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Available Properties</h2>
+      <p>Review the current listings and click the buttons to like or dislike homes. Your liked properties are saved for later review.</p>
+    </section>
+
+    <section class="table-section">
+      <div class="table-wrapper">
+        <table>
+          <caption>Current property listings with prices, location, and action controls</caption>
+          <thead>
+            <tr>
+              <th scope="col">Photo</th>
+              <th scope="col">Address</th>
+              <th scope="col">Price</th>
+              <th scope="col">Bedrooms</th>
+              <th scope="col">Bathrooms</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="property-list">
+            <tr data-id="1">
+              <td><img src="https://images.unsplash.com/photo-1560185127-6f4d63c6a65e?auto=format&fit=crop&w=400&q=80" alt="Modern two-story home exterior" /></td>
+              <td>742 Maple Street</td>
+              <td>$389,000</td>
+              <td>3</td>
+              <td>2</td>
+              <td>
+                <button class="like-button" type="button">Like</button>
+                <button class="dislike-button" type="button">Dislike</button>
+              </td>
+            </tr>
+            <tr data-id="2">
+              <td><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Cozy bungalow with front porch" /></td>
+              <td>185 Oak Avenue</td>
+              <td>$312,500</td>
+              <td>2</td>
+              <td>1</td>
+              <td>
+                <button class="like-button" type="button">Like</button>
+                <button class="dislike-button" type="button">Dislike</button>
+              </td>
+            </tr>
+            <tr data-id="3">
+              <td><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80" alt="Townhouse with balcony overlooking street" /></td>
+              <td>920 Pine Lane</td>
+              <td>$450,000</td>
+              <td>4</td>
+              <td>3</td>
+              <td>
+                <button class="like-button" type="button">Like</button>
+                <button class="dislike-button" type="button">Dislike</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="resource-card">
+      <h3>Mortgage Planning</h3>
+      <p>Need an estimate for monthly payments? Use this mortgage calculator to plan your budget.</p>
+      <a href="https://www.example.com/mortgage-calculator" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.unsplash.com/photo-1433155653768-0c7bfb4d3021?auto=format&fit=crop&w=1200&q=80" alt="Hands holding a house model next to a calculator" />
+      </a>
+      <p class="image-caption">Click the image to open a mortgage calculator resource.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

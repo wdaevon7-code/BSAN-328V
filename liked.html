@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liked Properties | Walker Real Estate Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-bar">
+      <h1>Walker Real Estate Finder</h1>
+      <nav aria-label="Primary navigation">
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse Properties</a></li>
+          <li><a href="liked.html">Liked Properties</a></li>
+          <li><a href="contact.html">Contact Agent</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Your Liked Properties</h2>
+      <p>Review the homes you marked as favorites and return to browse more options anytime.</p>
+    </section>
+
+    <section id="liked-properties" class="liked-list" aria-live="polite">
+      <p class="empty-message">You haven't liked any properties yet. Visit the browse page to save homes you love.</p>
+    </section>
+
+    <section class="favorite-tip">
+      <h3>Pro tip</h3>
+      <p>Click the browse button to compare properties side by side and refine your preferred criteria.</p>
+      <a class="button" href="browse.html">Browse More</a>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

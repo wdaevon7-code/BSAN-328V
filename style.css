@@ -1,0 +1,301 @@
+:root {
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --main: #0f4c81;
+  --accent: #ff6f61;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--main);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header h1 {
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  margin: 0;
+}
+
+.site-nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav li {
+  margin: 0;
+}
+
+.site-nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(15, 76, 129, 0.08);
+}
+
+main {
+  padding: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero,
+.featured-property,
+.quick-links,
+.table-section,
+.contact-section,
+.favorite-tip,
+.resource-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero h2,
+.featured-property h2,
+.resource-card h3,
+.favorite-tip h3,
+.contact-section h2 {
+  margin-top: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button,
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.25rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: var(--main);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover,
+.submit-button:hover,
+.button:focus,
+.submit-button:focus {
+  background: #0b3a64;
+}
+
+.image-caption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.quick-links {
+  display: grid;
+  gap: 1rem;
+}
+
+.quick-links article {
+  padding: 1rem;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #eef2ff;
+}
+
+th,
+td {
+  padding: 0.9rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  font-weight: 700;
+}
+
+td img {
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: cover;
+}
+
+.like-button,
+.dislike-button {
+  margin: 0.15rem 0.12rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.like-button {
+  color: #0f4c81;
+}
+
+.dislike-button {
+  color: #ef4444;
+}
+
+.contact-section form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  padding: 1rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 700;
+}
+
+.radio-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.radio-group p {
+  margin: 0 0 0.5rem;
+}
+
+.liked-list {
+  min-height: 160px;
+}
+
+.liked-property {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #fbfbff;
+  margin-bottom: 1rem;
+}
+
+.liked-property h3 {
+  margin-top: 0;
+}
+
+.empty-message {
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .quick-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .top-bar {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero,
+  .featured-property,
+  .quick-links,
+  .table-section,
+  .contact-section,
+  .favorite-tip,
+  .resource-card {
+    padding: 1rem;
+  }
+}

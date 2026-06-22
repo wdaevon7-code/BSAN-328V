@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Agent | Walker Real Estate Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-bar">
+      <h1>Walker Real Estate Finder</h1>
+      <nav aria-label="Primary navigation">
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse Properties</a></li>
+          <li><a href="liked.html">Liked Properties</a></li>
+          <li><a href="contact.html">Contact Agent</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact an Agent</h2>
+      <p>Send your preferred location, budget, and timeline so our team can match you with the best listings.</p>
+    </section>
+
+    <section class="contact-section">
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Personal information</legend>
+
+          <label for="full-name">Full Name</label>
+          <input id="full-name" name="full-name" type="text" placeholder="Daevon Walker" required>
+
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567">
+        </fieldset>
+
+        <fieldset>
+          <legend>Property preferences</legend>
+
+          <label for="location">Preferred Location</label>
+          <input id="location" name="location" type="text" placeholder="Downtown, Suburbs, Waterfront">
+
+          <label for="budget">Budget Range</label>
+          <input id="budget" name="budget" type="text" placeholder="$250,000 - $450,000">
+
+          <div class="radio-group">
+            <p>Need a move-in date:</p>
+            <label><input type="radio" name="move-in" value="asap" checked> ASAP</label>
+            <label><input type="radio" name="move-in" value="3-6 months"> 3-6 months</label>
+            <label><input type="radio" name="move-in" value="later"> Later</label>
+          </div>
+        </fieldset>
+
+        <label for="message">Additional Notes</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us what matters most in your new home"></textarea>
+
+        <button class="submit-button" type="submit">Send Inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
