@@ -10,7 +10,8 @@
   <header class="site-header">
     <div class="top-bar">
       <h1>Walker Real Estate Finder</h1>
-      <nav aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
         <ul class="site-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="browse.html">Browse Properties</a></li>
@@ -33,7 +34,7 @@
           <legend>Personal information</legend>
 
           <label for="full-name">Full Name</label>
-          <input id="full-name" name="full-name" type="text" placeholder="Daevon Walker" required>
+          <input id="full-name" name="full-name" type="text" placeholder="John Doe" required>
 
           <label for="email">Email Address</label>
           <input id="email" name="email" type="email" placeholder="you@example.com" required>

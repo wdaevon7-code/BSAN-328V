@@ -10,7 +10,8 @@
   <header class="site-header">
     <div class="top-bar">
       <h1>Walker Real Estate Finder</h1>
-      <nav aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
         <ul class="site-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="browse.html">Browse Properties</a></li>
@@ -25,10 +26,6 @@
     <section class="hero">
       <h2>Find your next home in one place</h2>
       <p>Browse available real estate properties, save favorites, and contact an agent from a mobile-friendly accessible site.</p>
-      <div class="hero-actions">
-        <a class="button" href="browse.html">Browse Properties</a>
-        <a class="button" href="liked.html">View Liked Properties</a>
-      </div>
     </section>
 
     <section class="featured-property">
@@ -42,16 +39,19 @@
 
     <section class="quick-links">
       <article>
-        <h3>Like or Dislike Properties</h3>
-        <p>Use the browse page to save homes you love or skip ones that don't fit.</p>
+        <h3>Like Properties</h3>
+        <p>Use the browse page to save homes you love and return to your favorites later.</p>
+        <a class="button" href="liked.html">View Liked Properties</a>
       </article>
       <article>
         <h3>Stay Organized</h3>
         <p>Visit the liked page to review your saved properties and prepare for your next visit.</p>
+        <a class="button" href="browse.html">Browse Properties</a>
       </article>
       <article>
         <h3>Ask an Agent</h3>
         <p>Submit your property preferences using the contact form to receive personalized recommendations.</p>
+        <a class="button" href="contact.html">Contact Agent</a>
       </article>
     </section>
   </main>

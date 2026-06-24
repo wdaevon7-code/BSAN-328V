@@ -42,17 +42,23 @@ function updateButtonStates() {
   document.querySelectorAll('tr[data-id]').forEach((row) => {
     const id = row.dataset.id;
     const likeButton = row.querySelector('.like-button');
-    const dislikeButton = row.querySelector('.dislike-button');
+    if (!likeButton) return;
+
     if (likedIds.includes(id)) {
       likeButton.textContent = 'Liked';
       likeButton.disabled = true;
-      dislikeButton.disabled = false;
     } else {
       likeButton.textContent = 'Like';
       likeButton.disabled = false;
-      dislikeButton.disabled = false;
     }
   });
+}
+
+function removeLikedProperty(id) {
+  const likedIds = getLikedProperties().filter((existingId) => existingId !== id);
+  saveLikedProperties(likedIds);
+  renderLikedProperties();
+  updateButtonStates();
 }
 
 function renderLikedProperties() {
@@ -72,11 +78,13 @@ function renderLikedProperties() {
     if (!property) return;
     const propertyCard = document.createElement('article');
     propertyCard.className = 'liked-property';
+    propertyCard.dataset.id = property.id;
     propertyCard.innerHTML = `
       <h3>${property.title}</h3>
       <p><strong>Price:</strong> ${property.price}</p>
       <p><strong>Bedrooms:</strong> ${property.beds} &bull; <strong>Bathrooms:</strong> ${property.baths}</p>
       <img src="${property.image}" alt="${property.imageAlt}">
+      <button class="remove-button" type="button">Remove</button>
     `;
     likedSection.appendChild(propertyCard);
   });
@@ -89,30 +97,61 @@ function attachTableListeners() {
   table.addEventListener('click', (event) => {
     const button = event.target;
     if (!(button instanceof HTMLButtonElement)) return;
+    if (!button.classList.contains('like-button')) return;
+
     const row = button.closest('tr');
     if (!row) return;
+
     const id = row.dataset.id;
-    let likedIds = getLikedProperties();
+    const likedIds = getLikedProperties();
 
-    if (button.classList.contains('like-button')) {
-      if (!likedIds.includes(id)) {
-        likedIds.push(id);
-        saveLikedProperties(likedIds);
-      }
-    }
-
-    if (button.classList.contains('dislike-button')) {
-      likedIds = likedIds.filter((existingId) => existingId !== id);
+    if (!likedIds.includes(id)) {
+      likedIds.push(id);
       saveLikedProperties(likedIds);
+      updateButtonStates();
     }
+  });
+}
 
-    updateButtonStates();
+function attachLikedListeners() {
+  const likedSection = document.getElementById('liked-properties');
+  if (!likedSection) return;
+
+  likedSection.addEventListener('click', (event) => {
+    const button = event.target;
+    if (!(button instanceof HTMLButtonElement)) return;
+    if (!button.classList.contains('remove-button')) return;
+
+    const propertyCard = button.closest('.liked-property');
+    if (!propertyCard) return;
+
+    removeLikedProperty(propertyCard.dataset.id);
+  });
+}
+
+function attachMenuToggle() {
+  const menuButton = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('primary-navigation');
+  if (!menuButton || !nav) return;
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 767 && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
 function initPage() {
-  updateButtonStates();
   attachTableListeners();
+  attachLikedListeners();
+  attachMenuToggle();
+  updateButtonStates();
   renderLikedProperties();
 }
 
