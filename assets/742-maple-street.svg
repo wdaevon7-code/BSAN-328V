@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">742 Maple Street property preview</title>
+  <desc id="desc">A stylized modern house with a blue sky and green lawn.</desc>
+  <rect width="800" height="500" fill="#eaf7ff"/>
+  <rect y="320" width="800" height="180" fill="#7bc96f"/>
+  <rect x="90" y="190" width="270" height="150" rx="8" fill="#ffffff"/>
+  <rect x="140" y="140" width="170" height="110" rx="6" fill="#2f6f9f"/>
+  <rect x="165" y="155" width="40" height="60" fill="#ffffff"/>
+  <rect x="225" y="155" width="40" height="60" fill="#ffffff"/>
+  <rect x="275" y="240" width="50" height="100" fill="#c7d9e8"/>
+  <rect x="430" y="210" width="220" height="120" rx="8" fill="#ffffff"/>
+  <rect x="455" y="185" width="170" height="95" rx="6" fill="#5a8f3f"/>
+  <rect x="480" y="200" width="40" height="50" fill="#ffffff"/>
+  <rect x="545" y="200" width="40" height="50" fill="#ffffff"/>
+  <path d="M360 220 L520 120 L680 220" fill="none" stroke="#5a8f3f" stroke-width="8"/>
+  <circle cx="650" cy="120" r="60" fill="#ffd166"/>
+  <text x="120" y="430" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#1f3d5a">742 Maple Street</text>
+</svg>

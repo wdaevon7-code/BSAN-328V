@@ -147,10 +147,36 @@ function attachMenuToggle() {
   });
 }
 
+function attachContactFormListeners() {
+  const moveInRadios = document.querySelectorAll('input[name="move-in"]');
+  const otherMoveInContainer = document.getElementById('other-move-in-container');
+  const moveInDateField = document.getElementById('move-in-date');
+
+  if (!moveInRadios.length || !otherMoveInContainer || !moveInDateField) return;
+
+  const toggleMoveInDateField = () => {
+    const selectedOption = document.querySelector('input[name="move-in"]:checked');
+    const shouldShow = selectedOption && selectedOption.value === 'other';
+
+    otherMoveInContainer.hidden = !shouldShow;
+
+    if (!shouldShow) {
+      moveInDateField.value = '';
+    }
+  };
+
+  moveInRadios.forEach((radio) => {
+    radio.addEventListener('change', toggleMoveInDateField);
+  });
+
+  toggleMoveInDateField();
+}
+
 function initPage() {
   attachTableListeners();
   attachLikedListeners();
   attachMenuToggle();
+  attachContactFormListeners();
   updateButtonStates();
   renderLikedProperties();
 }
