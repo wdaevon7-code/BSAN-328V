@@ -6,7 +6,7 @@ const properties = [
     beds: '3',
     baths: '2',
     imageAlt: 'Modern two-story home exterior',
-    image: 'https://images.unsplash.com/photo-1560185127-6f4d63c6a65e?auto=format&fit=crop&w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=400&q=80',
   },
   {
     id: '2',
