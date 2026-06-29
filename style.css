@@ -85,6 +85,19 @@ a:focus {
   color: var(--text);
   font-weight: 700;
   cursor: pointer;
+  list-style: none;
+}
+
+.menu-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav {
+  display: contents;
+}
+
+.mobile-nav > .primary-nav {
+  display: block;
 }
 
 .primary-nav {
@@ -178,6 +191,15 @@ table {
   border-collapse: collapse;
 }
 
+caption {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 thead {
   background: #eef2ff;
 }
@@ -204,6 +226,9 @@ td img {
 
 .like-button,
 .remove-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 0.15rem 0.12rem;
   padding: 0.5rem 0.8rem;
   border: 1px solid var(--border);
@@ -260,6 +285,15 @@ legend {
   margin: 0 0 0.5rem;
 }
 
+.move-in-date-container {
+  display: none;
+  margin-top: 0.75rem;
+}
+
+.radio-group:has(input[value="other"]:checked) .move-in-date-container {
+  display: block;
+}
+
 .liked-list {
   min-height: 160px;
 }
@@ -308,12 +342,17 @@ legend {
     display: inline-flex;
   }
 
-  .primary-nav {
+  .mobile-nav {
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-nav > .primary-nav {
     display: none;
     width: 100%;
   }
 
-  .primary-nav.open {
+  .mobile-nav[open] > .primary-nav {
     display: block;
   }
 
@@ -335,17 +374,59 @@ legend {
   }
 
   .table-wrapper {
-    overflow-x: auto;
+    overflow-x: visible;
   }
 
   table {
+    display: block;
     width: 100%;
     min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0 0.75rem;
   }
 
+  thead {
+    display: none;
+  }
+
+  tbody,
+  tr,
   th,
   td {
-    display: table-cell;
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  td {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+
+  td:last-child {
+    border-bottom: 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    flex: 0 0 6rem;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  td img {
+    max-width: 100px;
   }
 
   .hero,

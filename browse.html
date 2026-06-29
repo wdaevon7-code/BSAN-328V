@@ -10,15 +10,17 @@
   <header class="site-header">
     <div class="top-bar">
       <h1>Walker Real Estate Finder</h1>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu <span aria-hidden="true">☰</span></button>
-      <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
-        <ul class="site-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="browse.html">Browse Properties</a></li>
-          <li><a href="liked.html">Liked Properties</a></li>
-          <li><a href="contact.html">Contact Agent</a></li>
-        </ul>
-      </nav>
+      <details class="mobile-nav">
+        <summary class="menu-toggle" aria-controls="primary-navigation">Menu <span aria-hidden="true">☰</span></summary>
+        <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+          <ul class="site-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse Properties</a></li>
+            <li><a href="liked.html">Liked Properties</a></li>
+            <li><a href="contact.html">Contact Agent</a></li>
+          </ul>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -50,7 +52,7 @@
               <td data-label="Bedrooms">3</td>
               <td data-label="Bathrooms">2</td>
               <td data-label="Action">
-                <button class="like-button" type="button">Like</button>
+                <a class="like-button" href="liked.html">Like</a>
               </td>
             </tr>
             <tr data-id="2">
@@ -60,7 +62,7 @@
               <td data-label="Bedrooms">2</td>
               <td data-label="Bathrooms">1</td>
               <td data-label="Action">
-                <button class="like-button" type="button">Like</button>
+                <a class="like-button" href="liked.html">Like</a>
               </td>
             </tr>
             <tr data-id="3">
@@ -70,7 +72,7 @@
               <td data-label="Bedrooms">4</td>
               <td data-label="Bathrooms">3</td>
               <td data-label="Action">
-                <button class="like-button" type="button">Like</button>
+                <a class="like-button" href="liked.html">Like</a>
               </td>
             </tr>
           </tbody>
@@ -88,6 +90,5 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
 </body>
 </html>
